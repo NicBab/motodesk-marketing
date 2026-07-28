@@ -1,6 +1,12 @@
+import Link from "next/link";
+
 import Logo from "./Logo";
 
-import { FOOTER_COLUMNS } from "@/constants/footer";
+import {
+  FOOTER_NAVIGATION,
+  LEGAL_NAVIGATION,
+} from "@/constants/navigation";
+import { SITE_CONFIG } from "@/constants/site";
 
 export default function Footer() {
   return (
@@ -11,26 +17,25 @@ export default function Footer() {
             <Logo />
 
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              The cloud platform powering powersports dealerships, service
-              centers, and repair shops.
+              {SITE_CONFIG.description}
             </p>
           </div>
 
-          {FOOTER_COLUMNS.map((column) => (
+          {FOOTER_NAVIGATION.map((column) => (
             <nav key={column.title} aria-label={column.title}>
-              <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-foreground">
+              <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-foreground">
                 {column.title}
-              </h4>
+              </h2>
 
               <ul className="mt-4 space-y-2.5">
                 {column.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
-                      {link}
-                    </a>
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -40,25 +45,20 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-border/70 pt-8 sm:flex-row sm:items-center">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} MotoDesk. All rights reserved.
+            © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights
+            reserved.
           </p>
 
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-muted-foreground">
-            <a href="#" className="hover:text-foreground">
-              Privacy
-            </a>
-
-            <a href="#" className="hover:text-foreground">
-              Terms
-            </a>
-
-            <a href="#" className="hover:text-foreground">
-              Security
-            </a>
-
-            <a href="#" className="hover:text-foreground">
-              DPA
-            </a>
+            {LEGAL_NAVIGATION.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </Link>
+            ))}
 
             <span className="inline-flex items-center gap-1.5">
               <span

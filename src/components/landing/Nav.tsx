@@ -1,24 +1,22 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
+
 import Logo from "./Logo";
 
-const links = [
-  { label: "Product", href: "#features" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Customers", href: "#customers" },
-];
+import { MAIN_NAVIGATION } from "@/constants/navigation";
+import { SITE_CONFIG } from "@/constants/site";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    function handleScroll() {
       setScrolled(window.scrollY > 8);
-    };
+    }
 
     handleScroll();
 
@@ -31,6 +29,10 @@ export default function Nav() {
     };
   }, []);
 
+  function closeMobileMenu() {
+    setOpen(false);
+  }
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
       <nav
@@ -41,40 +43,41 @@ export default function Nav() {
             : "bg-background/30 backdrop-blur-md"
         }`}
       >
-        <a
-          href="#top"
+        <Link
+          href="/#top"
           className="flex items-center gap-2 pl-1"
-          aria-label="MotoDesk home"
+          aria-label={`${SITE_CONFIG.name} home`}
+          onClick={closeMobileMenu}
         >
           <Logo />
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-1 md:flex">
-          {links.map((link) => (
-            <a
+          {MAIN_NAVIGATION.map((link) => (
+            <Link
               key={link.href}
               href={link.href}
               className="rounded-lg px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
         <div className="hidden items-center gap-2 md:flex">
           <a
-            href="https://app.motodesk.com/login"
+            href={`${SITE_CONFIG.appUrl}/login`}
             className="rounded-lg px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             Sign in
           </a>
 
-          <a
+          <Link
             href="#pricing"
             className="rounded-lg bg-foreground px-3.5 py-1.5 text-sm font-medium text-background transition-transform hover:scale-[1.02]"
           >
             Start free trial
-          </a>
+          </Link>
         </div>
 
         <button
@@ -98,33 +101,33 @@ export default function Nav() {
             className="hairline absolute left-0 right-0 top-full mt-2 rounded-2xl bg-background/95 p-4 backdrop-blur-xl md:hidden"
           >
             <div className="flex flex-col gap-1">
-              {links.map((link) => (
-                <a
+              {MAIN_NAVIGATION.map((link) => (
+                <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setOpen(false)}
+                  onClick={closeMobileMenu}
                   className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
 
               <div className="my-2 h-px bg-border" />
 
               <a
-                href="https://app.motodesk.com/login"
+                href={`${SITE_CONFIG.appUrl}/login`}
                 className="rounded-lg px-3 py-2 text-sm"
               >
                 Sign in
               </a>
 
-              <a
+              <Link
                 href="#pricing"
-                onClick={() => setOpen(false)}
+                onClick={closeMobileMenu}
                 className="rounded-lg bg-foreground px-3 py-2 text-center text-sm font-medium text-background"
               >
                 Start free trial
-              </a>
+              </Link>
             </div>
           </div>
         )}

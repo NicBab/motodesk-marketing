@@ -25,7 +25,7 @@ export interface FAQItem {
     answer: string;
 }
 
-export interface FooterColumn {
-    title: string;
-    links: readonly string[];
-}
+// export interface FooterColumn {
+//     title: string;
+//     links: readonly string[];
+// }
