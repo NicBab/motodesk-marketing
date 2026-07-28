@@ -47,7 +47,7 @@ export default function Hero() {
 
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-muted-foreground sm:text-xl">
           MotoDesk replaces paperwork, spreadsheets, and disconnected tools
-          with one modern cloud platform for dealerships, service centers, and
+          with one modern cloud platform for service centers, and
           repair shops.
         </p>
 
