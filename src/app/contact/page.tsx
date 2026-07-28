@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
-import ContentSection from "@/components/marketing/ContentSection";
+import InfoCard from "@/components/marketing/InfoCard";
 import MarketingPageShell from "@/components/marketing/MarketingPageShell";
 
 export const metadata: Metadata = {
@@ -21,46 +20,29 @@ export default function ContactPage() {
       description="Tell us about your dealership, service center, or repair shop and what you need from MotoDesk."
     >
       <div className="grid gap-6 md:grid-cols-2">
-        <article className="hairline rounded-2xl bg-surface/40 p-6">
-          <h2 className="text-xl font-semibold">Product and demos</h2>
-
-          <p className="mt-3 text-sm leading-6 text-muted-foreground">
-            Learn how MotoDesk can support your service, parts, inventory,
-            customer, and sales workflows.
-          </p>
-
-          <Link
+        <InfoCard
+          title="Product and demos"
+          description="Learn how MotoDesk can support your service, parts, inventory, customer, and sales workflows."
+        >
+          <a
             href="mailto:sales@motodesk.com"
-            className="mt-6 inline-flex text-sm font-medium text-ember hover:underline"
+            className="text-sm font-medium text-ember hover:underline"
           >
             sales@motodesk.com
-          </Link>
-        </article>
+          </a>
+        </InfoCard>
 
-        <article className="hairline rounded-2xl bg-surface/40 p-6">
-          <h2 className="text-xl font-semibold">Support</h2>
-
-          <p className="mt-3 text-sm leading-6 text-muted-foreground">
-            Existing customers can contact the MotoDesk support team for
-            account and technical assistance.
-          </p>
-
-          <Link
+        <InfoCard
+          title="Customer support"
+          description="Existing customers can contact the MotoDesk team for account and technical assistance."
+        >
+          <a
             href="mailto:support@motodesk.com"
-            className="mt-6 inline-flex text-sm font-medium text-ember hover:underline"
+            className="text-sm font-medium text-ember hover:underline"
           >
             support@motodesk.com
-          </Link>
-        </article>
-      </div>
-
-      <div className="mt-12">
-        <ContentSection title="Before publishing">
-          <p>
-            Replace these email addresses if the MotoDesk domain mailboxes have
-            not been configured yet.
-          </p>
-        </ContentSection>
+          </a>
+        </InfoCard>
       </div>
     </MarketingPageShell>
   );
