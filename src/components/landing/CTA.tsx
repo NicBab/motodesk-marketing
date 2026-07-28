@@ -17,7 +17,7 @@ export default function CTA() {
               Ready to run your shop on <span className="gradient-text">one platform?</span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Join 3,200+ dealerships that ditched the paperwork. Free for 14 days.
+              Ditch the paperwork. Free for 14 days.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a

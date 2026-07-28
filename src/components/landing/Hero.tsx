@@ -42,7 +42,7 @@ export default function Hero() {
 
         <h1 className="mx-auto mt-6 max-w-4xl text-center text-5xl font-semibold leading-[1.02] tracking-[-0.03em] sm:text-6xl md:text-7xl">
           The operating system for{" "}
-          <span className="gradient-text">powersports dealers</span>
+          <span className="gradient-text">powersports service</span>
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-muted-foreground sm:text-xl">

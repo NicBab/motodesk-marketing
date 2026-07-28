@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import Nav from "@/components/landing/Nav";
 import Hero from "@/components/landing/Hero";
-// import LogoCloud from "@/components/landing/LogoCloud";
+import LogoCloud from "@/components/landing/LogoCloud";
 import Features from "@/components/landing/Features";
 import Showcase from "@/components/landing/Showcase";
 import Stats from "@/components/landing/Stats";
@@ -34,7 +34,7 @@ export default function HomePage() {
 
       <main>
         <Hero />
-        {/* <LogoCloud /> */}
+        <LogoCloud />
         <Features />
         <Showcase />
         <Stats />
