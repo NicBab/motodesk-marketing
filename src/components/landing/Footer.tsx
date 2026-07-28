@@ -2,10 +2,7 @@ import Link from "next/link";
 
 import Logo from "./Logo";
 
-import {
-  FOOTER_NAVIGATION,
-  LEGAL_NAVIGATION,
-} from "@/constants/navigation";
+import { FOOTER_NAVIGATION, LEGAL_NAVIGATION } from "@/constants/navigation";
 import { SITE_CONFIG } from "@/constants/site";
 
 export default function Footer() {
@@ -60,14 +57,16 @@ export default function Footer() {
               </Link>
             ))}
 
-            <span className="inline-flex items-center gap-1.5">
+            <Link
+              href="/status"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
+            >
               <span
                 aria-hidden="true"
                 className="inline-block size-1.5 rounded-full bg-ember"
               />
-
-              All systems normal
-            </span>
+              System status
+            </Link>
           </div>
         </div>
       </div>

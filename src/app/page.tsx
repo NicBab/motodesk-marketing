@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-
 import Nav from "@/components/landing/Nav";
 import Hero from "@/components/landing/Hero";
 import LogoCloud from "@/components/landing/LogoCloud";
@@ -31,8 +30,7 @@ export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-background text-foreground">
       <Nav />
-
-      <main>
+      <main id="top">
         <Hero />
         <LogoCloud />
         <Features />
@@ -43,7 +41,6 @@ export default function HomePage() {
         <FAQ />
         <CTA />
       </main>
-
       <Footer />
     </div>
   );
