@@ -1,8 +1,17 @@
-export default function Logo({ className = "" }: { className?: string }) {
+type LogoProps = {
+  className?: string;
+};
+
+export default function Logo({ className = "" }: LogoProps) {
   return (
     <div className={`flex items-center gap-2 ${className}`}>
       <div className="relative grid size-7 place-items-center rounded-lg bg-gradient-to-br from-[oklch(0.78_0.21_55)] to-[oklch(0.62_0.22_32)] shadow-ember">
-        <svg viewBox="0 0 24 24" className="size-4 text-background" fill="none">
+        <svg
+          viewBox="0 0 24 24"
+          className="size-4 text-background"
+          fill="none"
+          aria-hidden="true"
+        >
           <path
             d="M4 17l4-10 4 6 4-8 4 12"
             stroke="currentColor"
@@ -12,7 +21,10 @@ export default function Logo({ className = "" }: { className?: string }) {
           />
         </svg>
       </div>
-      <span className="text-[15px] font-semibold tracking-tight">MotoDesk</span>
+
+      <span className="text-[15px] font-semibold tracking-tight">
+        MotoDesk
+      </span>
     </div>
   );
 }
