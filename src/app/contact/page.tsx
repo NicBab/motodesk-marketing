@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { Clock3, Mail, MessageSquareText } from "lucide-react";
 
+import ContactForm from "@/components/marketing/ContactForm";
 import InfoCard from "@/components/marketing/InfoCard";
 import MarketingPageShell from "@/components/marketing/MarketingPageShell";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact the MotoDesk team about product questions, demos, onboarding, partnerships, or support.",
+    "Contact MotoDesk about demos, dealership software, onboarding, migration, partnerships, or customer support.",
   alternates: {
     canonical: "/contact",
   },
@@ -15,34 +17,44 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <MarketingPageShell
-      eyebrow="Contact"
+      eyebrow="Contact MotoDesk"
       title="Let’s talk about your operation."
-      description="Tell us about your dealership, service center, or repair shop and what you need from MotoDesk."
+      description="Tell us where your current workflow slows down and what you need from a modern dealership platform."
     >
-      <div className="grid gap-6 md:grid-cols-2">
-        <InfoCard
-          title="Product and demos"
-          description="Learn how MotoDesk can support your service, parts, inventory, customer, and sales workflows."
-        >
-          <a
-            href="mailto:sales@motodesk.com"
-            className="text-sm font-medium text-ember hover:underline"
-          >
-            sales@motodesk.com
-          </a>
-        </InfoCard>
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem]">
+        <ContactForm />
 
-        <InfoCard
-          title="Customer support"
-          description="Existing customers can contact the MotoDesk team for account and technical assistance."
-        >
-          <a
-            href="mailto:support@motodesk.com"
-            className="text-sm font-medium text-ember hover:underline"
+        <aside className="space-y-5">
+          <InfoCard
+            title="Product questions"
+            description="Ask about MotoDesk features, plans, implementation, or upcoming integrations."
           >
-            support@motodesk.com
-          </a>
-        </InfoCard>
+            <Mail
+              aria-hidden="true"
+              className="size-5 text-ember"
+            />
+          </InfoCard>
+
+          <InfoCard
+            title="Book a walkthrough"
+            description="We can discuss your shop structure and show how the MotoDesk workflow is designed to fit."
+          >
+            <MessageSquareText
+              aria-hidden="true"
+              className="size-5 text-ember"
+            />
+          </InfoCard>
+
+          <InfoCard
+            title="Response time"
+            description="During launch, inquiries will be reviewed directly by the MotoDesk team."
+          >
+            <Clock3
+              aria-hidden="true"
+              className="size-5 text-ember"
+            />
+          </InfoCard>
+        </aside>
       </div>
     </MarketingPageShell>
   );

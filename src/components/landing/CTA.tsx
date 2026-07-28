@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function CTA() {
   return (
@@ -36,19 +37,18 @@ export default function CTA() {
                 className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[oklch(0.78_0.21_55)] to-[oklch(0.62_0.22_32)] px-5 py-3 text-sm font-semibold text-background shadow-ember transition-transform hover:scale-[1.02]"
               >
                 Start free trial
-
                 <ArrowRight
                   aria-hidden="true"
                   className="size-4 transition-transform group-hover:translate-x-0.5"
                 />
               </a>
 
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="hairline inline-flex items-center gap-2 rounded-xl bg-white/5 px-5 py-3 text-sm font-medium backdrop-blur transition-colors hover:bg-white/10"
               >
                 Book a demo
-              </a>
+              </Link>
             </div>
           </div>
         </div>
