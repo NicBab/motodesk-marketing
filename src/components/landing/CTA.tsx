@@ -27,8 +27,7 @@ export default function CTA() {
             </h2>
 
             <p className="mt-4 text-lg text-muted-foreground">
-              Join 3,200+ dealerships that ditched the paperwork. Free for 14
-              days.
+              Ditch the paperwork. Try free for 14 days.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
