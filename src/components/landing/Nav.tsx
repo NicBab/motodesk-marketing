@@ -3,9 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-
 import Logo from "./Logo";
-
 import { MAIN_NAVIGATION } from "@/constants/navigation";
 import { SITE_CONFIG } from "@/constants/site";
 
